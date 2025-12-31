@@ -6,4 +6,5 @@ import com.ramkrushna.ragdocchat.dto.DocumentUploadResponse;
 
 public interface DocumentService {
     DocumentUploadResponse uploadDocument(MultipartFile file);
+    
 }

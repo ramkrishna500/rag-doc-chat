@@ -69,7 +69,6 @@ public class DocumentServiceImpl implements DocumentService {
                 chunk.setDocument(savedDocument);
                 chunk.setTextChunk(chunkText);
                 chunk.setVectorId(vectorId);
-
                 documentChunkRepository.save(chunk);
                 chunkCount.incrementAndGet();
 

@@ -8,4 +8,9 @@ import com.ramkrushna.ragdocchat.model.DocumentChunk;
 
 public interface DocumentChunkRepository extends JpaRepository<DocumentChunk, Long> {
     List<DocumentChunk> findByVectorIdIn(List<String> vectorIds);
+
+    List<DocumentChunk> findByVectorIdInAndDocumentId(
+            List<String> vectorIds,
+            Long documentId
+    );
 }
