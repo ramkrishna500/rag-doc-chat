@@ -9,18 +9,11 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                // disable CSRF for APIs (Postman, REST)
                 .csrf(csrf -> csrf.disable())
-
-                // allow these endpoints
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(
-                                "/api/documents/upload",
-                                "/api/search")
-                        .permitAll()
+                        .requestMatchers("/", "/health", "/api/**").permitAll()
                         .anyRequest().authenticated());
 
         return http.build();
