@@ -23,17 +23,17 @@ public class DocumentServiceImpl implements DocumentService {
     private final VectorStoreService vectorStoreService;
 
     // If OpenAI API keys available then usefull.
-    private final EmbeddingService embeddingService;
+    // private final EmbeddingService embeddingService;
 
     // For google Gemini
     private final GoogleEmbeddingService googleEmbeddingService;
 
     public DocumentServiceImpl(DocumetRepository documentRepository, DocumentChunkRepository documentChunkRepository,
-            EmbeddingService embeddingService, VectorStoreService vectorStoreService,
+            VectorStoreService vectorStoreService,
             GoogleEmbeddingService googleEmbeddingService) {
         this.documentRepository = documentRepository;
         this.documentChunkRepository = documentChunkRepository;
-        this.embeddingService = embeddingService;
+        // this.embeddingService = embeddingService;
         this.vectorStoreService = vectorStoreService;
         this.googleEmbeddingService = googleEmbeddingService;
     }
